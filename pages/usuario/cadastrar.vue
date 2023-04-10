@@ -35,9 +35,11 @@ const usuario = reactive({
  });
 
 function save() {
-    console.log(usuario)
     UsuarioService.create(usuario).then(
-       response => { console.log(response.status); }
+        response => {
+            console.log(response.status);
+            console.log(response.data);
+        }
     )
 }
 

@@ -3,12 +3,12 @@
         <h1>Login de Usuario</h1>
         <v-form @submit.prevent>
             <v-text-field
-                v-model="usuario.email"
+                v-model="dadosUsuario.email"
                 label="Email"
                 type="email"
             ></v-text-field>
             <v-text-field
-                v-model="usuario.senha"
+                v-model="dadosUsuario.senha"
                 label="Senha"
                 type="password"
             ></v-text-field>
@@ -24,15 +24,17 @@
 import UsuarioService from '@/service/UsuarioService';
 import { reactive } from 'vue'
 
-const usuario = reactive({
+const dadosUsuario = reactive({
     email: "",
     senha: "",
  });
 
 function login() {
-    console.log(usuario)
-    UsuarioService.login(usuario).then(
-       response => { console.log(response.status); }
+    UsuarioService.login(dadosUsuario).then(
+        response => {
+            console.log(response.status);
+            console.log(response.data);
+        }
     )
 }
 
