@@ -18,16 +18,15 @@
             ></v-text-field>
 
             <v-btn @click="save">Cadastrar</v-btn>
-            <v-btn to="/usuario/login">Ja tem conta? Fazer Login</v-btn>
+            <v-btn to="/usuario/login">Login</v-btn>
         </v-form>
     </div>
 </template>
 
 
 <script setup>
-import UsuarioService from '@/service/UsuarioService';
+import UsuarioService from '~/service/UsuarioService';
 import { reactive } from 'vue'
-
 const usuario = reactive({
     nome: "",
     email: "",
@@ -35,9 +34,16 @@ const usuario = reactive({
  });
 
 function save() {
-    console.log(usuario)
     UsuarioService.create(usuario).then(
-       response => { console.log(response.status); }
+        response => {
+            console.log(response.status);
+            if (response.status == 200) {
+                console.log(response.data);
+                alert("Conta cadastrada com sucesso!");
+            } else {
+                alert("Conta ja existe!");
+            }
+        }
     )
 }
 
