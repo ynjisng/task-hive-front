@@ -7,6 +7,9 @@ class UsuarioService {
     list() {
         return http.get("/usuario");
     }
+    getPorId(id) {
+        return http.get("/usuario/" + id);
+    }
     login(data) {
         return http.get("/usuario/login", data);
     }

@@ -79,7 +79,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Usuario',
-          to: '/usuario/cadastrar',
+          to: '/usuario',
         },
         {
           icon: 'mdi-chart-bubble',

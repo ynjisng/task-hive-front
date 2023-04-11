@@ -13,29 +13,38 @@
                 type="password"
             ></v-text-field>
 
-            <v-btn @click="login">Entrar</v-btn>
-            <v-btn to="/usuario/cadastrar">Nao tem conta? Cadastrar</v-btn>
+            <v-btn @click="login" to="/projetos">Entrar</v-btn>
+            <v-btn to="/usuario/cadastrar">Cadastrar</v-btn>
         </v-form>
     </div>
 </template>
 
 
 <script setup>
-import UsuarioService from '@/service/UsuarioService';
-import { reactive } from 'vue'
+import UsuarioService from '~/service/UsuarioService';
+import { onMounted } from 'vue';
+import { ref } from 'vue';
+import { reactive } from 'vue';
 
 const dadosUsuario = reactive({
     email: "",
     senha: "",
  });
 
+ const user = ref({});
+
 function login() {
     UsuarioService.login(dadosUsuario).then(
         response => {
             console.log(response.status);
-            console.log(response.data);
+            user.value = response.data;
         }
     )
 }
+
+onMounted(
+      () => {login();} 
+  )
+
 
 </script>
