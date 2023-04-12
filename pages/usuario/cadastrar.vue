@@ -1,37 +1,30 @@
 <template>
-    <div>
-        <h1>Cadastro de Usuario</h1>
-        <v-form @submit.prevent>
-            <v-text-field
-                v-model="usuario.nome"
-                label="Nome"
-            ></v-text-field>
-            <v-text-field
-                v-model="usuario.email"
-                label="Email"
-                type="email"
-            ></v-text-field>
-            <v-text-field
-                v-model="usuario.senha"
-                label="Senha"
-                type="password"
-            ></v-text-field>
+    <v-card class="mx-auto" max-width="344">
+        <v-container>
+            <v-text-field v-model="usuario.nome" color="primary" label="Nome" clearable></v-text-field>
+            <v-text-field v-model="usuario.email" type="email" color="primary" label="Email" clearable></v-text-field>
+            <v-text-field v-model="usuario.senha" type="password" color="primary" label="Senha" clearable></v-text-field>
+        </v-container>
 
-            <v-btn @click="save">Cadastrar</v-btn>
-            <v-btn to="/usuario/login">Login</v-btn>
-        </v-form>
-    </div>
+        <v-card-actions>
+            <v-btn color="success" block size="large" @click="save">Cadastrar<v-icon icon="mdi-chevron-right" end></v-icon></v-btn>
+        </v-card-actions>
+        <v-card-actions>
+            <v-btn color="success" block size="large" to="/usuario/login">Entrar</v-btn>
+        </v-card-actions>
+    </v-card>
 </template>
 
 
 <script setup>
 import UsuarioService from '~/service/UsuarioService';
-import { reactive } from 'vue'
+import { reactive } from 'vue';
+
 const usuario = reactive({
     nome: "",
     email: "",
     senha: "",
- });
+});
 
 function save() {
     UsuarioService.create(usuario).then(

@@ -1,50 +1,38 @@
 <template>
-    <div>
-        <h1>Login de Usuario</h1>
-        <v-form @submit.prevent>
-            <v-text-field
-                v-model="dadosUsuario.email"
-                label="Email"
-                type="email"
-            ></v-text-field>
-            <v-text-field
-                v-model="dadosUsuario.senha"
-                label="Senha"
-                type="password"
-            ></v-text-field>
+        <v-card class="mx-auto" max-width="344">
+            <v-form @submit.prevent="loginUser">
+                <v-container>
+                    <v-text-field v-model="dados.email" type="email" label="Email" clearable></v-text-field>
+                    <v-text-field v-model="dados.senha" type="password" label="Senha" clearable></v-text-field>
+                </v-container>
 
-            <v-btn @click="login" to="/projetos">Entrar</v-btn>
-            <v-btn to="/usuario/cadastrar">Cadastrar</v-btn>
-        </v-form>
-    </div>
+                <v-card-actions>
+                    <v-btn block color="success" size="large" type="submit">Entrar</v-btn>
+                </v-card-actions>
+                <v-card-actions>
+                    <v-btn color="success" block size="large" to="/usuario/cadastrar">Cadastrar</v-btn>
+                </v-card-actions>
+            </v-form>
+        </v-card>
 </template>
 
-
 <script setup>
-import UsuarioService from '~/service/UsuarioService';
-import { onMounted } from 'vue';
-import { ref } from 'vue';
-import { reactive } from 'vue';
+  import { ref } from 'vue';
+  import { reactive } from 'vue';
+  import UsuarioService from '~/service/UsuarioService'
 
-const dadosUsuario = reactive({
+  const dados = {
     email: "",
-    senha: "",
- });
+    senha: ""
+}
+  const user = ref({})
 
- const user = ref({});
-
-function login() {
-    UsuarioService.login(dadosUsuario).then(
-        response => {
+  function loginUser() {
+      UsuarioService.login(dados).then(
+          response => {
             console.log(response.status);
             user.value = response.data;
-        }
-    )
-}
-
-onMounted(
-      () => {login();} 
-  )
-
-
+        } 
+      )
+  }
 </script>

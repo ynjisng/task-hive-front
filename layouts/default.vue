@@ -83,6 +83,11 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
+          title: 'Papeis',
+          to: '/papeis',
+        },
+        {
+          icon: 'mdi-chart-bubble',
           title: 'Projetos',
           to: '/projetos',
         },
