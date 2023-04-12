@@ -4,9 +4,6 @@ class UsuarioService {
     create(data) {
         return http.post("/usuario/cadastrar", data);
     }
-    list() {
-        return http.get("/usuario");
-    }
     getPorId(id) {
         return http.get("/usuario/" + id);
     }
