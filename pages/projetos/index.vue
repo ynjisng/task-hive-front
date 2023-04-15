@@ -21,7 +21,7 @@
         <td>
           <v-btn icon>
             <NuxtLink :to="'tarefas/' + projeto.id">
-              <v-icon>mdi-square-edit-outline</v-icon>
+              <v-icon>mdi-open-in-new</v-icon>
             </NuxtLink>
           </v-btn>
         </td>
