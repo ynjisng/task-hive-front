@@ -7,7 +7,7 @@
                 </v-container>
 
                 <v-card-actions>
-                    <v-btn block color="success" size="large" type="submit">Entrar</v-btn>
+                    <v-btn block color="success" size="large" type="submit" to="/papeis">Entrar</v-btn>
                 </v-card-actions>
                 <v-card-actions>
                     <v-btn color="success" block size="large" to="/usuario/cadastrar">Cadastrar</v-btn>

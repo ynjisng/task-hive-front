@@ -9,7 +9,10 @@ class PapelService {
         return http.get("/papel/lista");
     }
     load(id) {
-        return http.get("/tarefa/" + id);
+        return http.get("/papel/" + id);
+    }
+    loadProjetos(id) {
+        return http.get("/papel/" + id + "/projetos");
     }
 }
 export default new PapelService();

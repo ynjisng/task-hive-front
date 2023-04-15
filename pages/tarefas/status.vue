@@ -21,7 +21,7 @@
   </template>
   
   <script setup>
-  import StatusService from "@/services/StatusService";
+  import StatusService from "@/service/StatusService";
   
   const status = {
     pendente: false,

@@ -8,6 +8,9 @@
         <th class="text-left">
           Descricao
         </th>
+        <th class="text-left">
+          Listar Tarefas
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +23,7 @@
         </td>
         <td>
           <v-btn icon>
-            <NuxtLink :to="'tarefas/' + projeto.id">
+            <NuxtLink :to="`tarefas/${projeto.id}`">
               <v-icon>mdi-open-in-new</v-icon>
             </NuxtLink>
           </v-btn>

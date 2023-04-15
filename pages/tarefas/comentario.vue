@@ -8,7 +8,7 @@
   </template>
   
   <script setup>
-  import comentarioService from "@/services/ComentarioService";
+  import comentarioService from "@/service/ComentarioService";
   
   let comentario = '';
   

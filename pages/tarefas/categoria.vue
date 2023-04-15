@@ -8,7 +8,7 @@
   </template>
   
   <script setup>
-  import categoriaService from "@/services/CategoriaService";
+  import categoriaService from "@/service/CategoriaService";
   
   let category = '';
   
