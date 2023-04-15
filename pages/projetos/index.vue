@@ -12,34 +12,41 @@
     </thead>
     <tbody>
       <tr v-for="projeto in projetoList" :key="projeto.id">
-          <td>
-              {{ projeto.nome }}
-          </td>
-          <td>
-              {{ projeto.descricao }}
-          </td>
+        <td>
+          {{ projeto.nome }}
+        </td>
+        <td>
+          {{ projeto.descricao }}
+        </td>
+        <td>
+          <v-btn icon>
+            <NuxtLink :to="'tarefas/' + projeto.id">
+              <v-icon>mdi-square-edit-outline</v-icon>
+            </NuxtLink>
+          </v-btn>
+        </td>
       </tr>
     </tbody>
-</v-simple-table>
+  </v-simple-table>
 </template>
 
 <script setup>
-  import { ref } from 'vue';
-  import { onMounted } from 'vue';
-  import ProjetoService from '~/service/ProjetoService'
+import { ref } from 'vue';
+import { onMounted } from 'vue';
+import ProjetoService from '~/service/ProjetoService'
 
-  const projetoList = ref([])
+const projetoList = ref([])
 
-  function loadAll() {
-      ProjetoService.list(null).then(
-          response => {
-              projetoList.value = response.data;
-          }
-      )
-  }
-
-  onMounted(
-      () => {loadAll();} 
+function loadAll() {
+  ProjetoService.list(null).then(
+    response => {
+      projetoList.value = response.data;
+    }
   )
+}
+
+onMounted(
+  () => { loadAll(); }
+)
 
 </script>

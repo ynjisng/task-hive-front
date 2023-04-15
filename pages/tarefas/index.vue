@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="task in task" :key="task.id">
+      <tr v-for="task in task" v-if="!task.arquivo || !task.excluido" :key="task.id">
         <td>
           <v-btn icon @click="exibirDetalhes(task)">
             <v-icon>mdi-information-outline</v-icon>
@@ -41,7 +41,7 @@
           </v-btn>
         </td>
       </tr>
-      <tr v-for="task in taskList" :key="task.id">
+      <tr v-for="task in taskList" v-if="!task.arquivo || !task.excluido" :key="task.id">
         <td>
           <v-btn icon @click="exibirDetalhes(task)">
             <v-icon>mdi-information-outline</v-icon>
