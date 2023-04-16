@@ -2,28 +2,18 @@
   <v-simple-table>
     <thead>
       <tr>
-        <th class="text-left">
-          Nome
-        </th>
-        <th class="text-left">
-          Descricao
-        </th>
-        <th class="text-left">
-          Listar Tarefas
-        </th>
+        <th class="text-left">Nome</th>
+        <th class="text-left">Descricao</th>
+        <th class="text-left">Listar Tarefas</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="projeto in projetoList" :key="projeto.id">
-        <td>
-          {{ projeto.nome }}
-        </td>
-        <td>
-          {{ projeto.descricao }}
-        </td>
+        <td>{{ projeto.nome }}</td>
+        <td>{{ projeto.descricao }}</td>
         <td>
           <v-btn icon>
-            <NuxtLink :to="`tarefas/${projeto.id}`">
+            <NuxtLink :to="'tarefas/' + projeto.id">
               <v-icon>mdi-open-in-new</v-icon>
             </NuxtLink>
           </v-btn>
