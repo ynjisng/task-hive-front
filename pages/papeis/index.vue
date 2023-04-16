@@ -13,7 +13,9 @@
         <td>{{ papel.descricao }}</td>
         <td>
           <v-btn icon>
-            <v-icon>mdi-open-in-new</v-icon>
+            <NuxtLink :to="'/projetos/' + papel.id">
+              <v-icon>mdi-open-in-new</v-icon>
+            </NuxtLink>
           </v-btn>
         </td>
       </tr>
@@ -37,8 +39,6 @@ function loadAll() {
   )
 }
 
-onMounted(
-  () => { loadAll(); }
-)
+onMounted(() => { loadAll(); })
 
 </script>
