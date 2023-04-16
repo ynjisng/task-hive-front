@@ -5,6 +5,9 @@ class StatusService {
         console.log(data);
         return http.post("/status/adicionar", data);
     }
+    list() {
+        return http.get("/status");
+    }
     load(id) {
         return http.get("/status/" + id);
     }
