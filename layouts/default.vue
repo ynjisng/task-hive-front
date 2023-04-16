@@ -54,37 +54,37 @@ export default {
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-account',
           title: 'Usuario',
           to: '/usuario',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-notebook',
           title: 'Papeis',
           to: '/papeis',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-developer-board',
           title: 'Projetos',
           to: '/projetos',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-calendar-check',
           title: 'Tarefas',
           to: '/tarefas',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-archive',
           title: 'Arquivo',
           to: '/arquivo',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-trash-can',
           title: 'Lixeira',
           to: '/lixeira',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-chart-arc',
           title: 'Relatórios',
           to: '/relatorios',
         }
