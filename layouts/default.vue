@@ -44,7 +44,7 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
-      clipped: false,
+      clipped: true,
       drawer: false,
       fixed: false,
       items: [
@@ -92,7 +92,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'TASKHIVE - Gerenciador de Tarefas',
+      title: 'TaskHive - Gerenciador de Tarefas',
     }
   },
 }
