@@ -38,8 +38,6 @@ function loadAll() {
   )
 }
 
-onMounted(
-  () => { loadAll(); }
-)
+onMounted(() => { loadAll(); })
 
 </script>

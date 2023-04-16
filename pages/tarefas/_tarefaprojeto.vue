@@ -17,14 +17,12 @@
 
 <script setup>
 
-import TarefaService from '@/service/TarefaService';
 import ProjetoService from '@/service/ProjetoService';
 import { ref } from 'vue'
 import { onMounted } from 'vue';
 import { useRoute } from 'vue2-helpers/vue-router';
 
 const route = useRoute()
-console.log(route.params.tarefaprojeto)
 const id_projeto = route.params.tarefaprojeto;
 const tarefas = ref({});
 const statuses = ['pendente', 'top', 'topado']
@@ -35,15 +33,11 @@ function load() {
             tarefas.value = response.data;
             tarefas.value.forEach((tarefa, index) => {
                 tarefa.statuses = statuses[index]
-            }); 
+            });
         }
     )
 }
 
-onMounted(
-    () => {
-        load();
-    }
-)
+onMounted(() => { load(); })
 
 </script>
