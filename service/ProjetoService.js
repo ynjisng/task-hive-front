@@ -13,5 +13,8 @@ class ProjetoService {
     loadTarefas(id) {
         return http.get("/projeto/" + id + "/tarefas");
     }
+    loadTarefasLista(id) {
+        return http.get("/projeto/" + id + "/tarefaslista");
+    }
 }
 export default new ProjetoService();
