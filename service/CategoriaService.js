@@ -5,6 +5,9 @@ class CategoriaService {
         console.log(data);
         return http.post("/categoria/adicionar", data);
     }
+    list() {
+        return http.get("/categoria");
+    }
     load(id) {
         return http.get("/categoria/" + id);
     }
