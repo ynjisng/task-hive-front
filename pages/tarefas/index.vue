@@ -60,7 +60,7 @@
               <v-icon>mdi-square-edit-outline</v-icon>
             </NuxtLink>
           </v-btn>
-          <v-btn icon @click="deletar(task.id)">
+          <v-btn icon @click="deletarLista(task.id)">
             <v-icon>mdi-trash-can-outline</v-icon>
           </v-btn>
         </td>
@@ -127,6 +127,12 @@ function loadAllTasksList() {
 
 function deletar(id) {
   TarefaService.delete(id);
+  loadAllTasks();
+  loadAllTasksList();
+}
+
+function deletarLista(id) {
+  TarefaListaService.delete(id);
   loadAllTasks();
   loadAllTasksList();
 }
