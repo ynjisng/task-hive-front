@@ -8,7 +8,7 @@
         <v-card-title class="headline">Bem-vindo ao Task Hive</v-card-title>
         <v-card-text>
           <p>
-            Task Hive é um projeto de gerenciamento de tarefas simples.
+            TaskHive é um sistema de gerenciamento de projetos simples.
           </p>
           <p>
             Veja no Github o código do <a href="https://github.com/ynjisng/task-hive-front" target="_blank" rel="noopener noreferrer" title="frontend">Frontend</a> e do <a href="https://github.com/ynjisng/task-hive-back" target="_blank" rel="noopener noreferrer" title="backend">Backend</a> do projeto.

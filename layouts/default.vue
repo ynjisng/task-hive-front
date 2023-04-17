@@ -50,7 +50,7 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Pagina Inicial',
+          title: 'Inicio',
           to: '/',
         },
         {
@@ -92,7 +92,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'TaskHive - Gerenciador de Tarefas',
+      title: 'TaskHive - Gerenciador de Projetos',
     }
   },
 }
