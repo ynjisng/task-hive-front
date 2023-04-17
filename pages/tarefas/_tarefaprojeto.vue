@@ -3,7 +3,9 @@
         <h1>{{ projeto.nome }}</h1><br>
         <v-divider></v-divider><br>
         <v-btn prepend-icon="mdi-plus">
-            Adicionar Tarefa
+            <NuxtLink :to="'criar/' + id_projeto">
+              Adicionar Tarefa
+            </NuxtLink>
         </v-btn><br><br>
         <task-list-status :tasks="tarefas" :taskslist="tarefas_lista" :statuses="statuses" />
     </div>
@@ -21,7 +23,7 @@ const id_projeto = route.params.tarefaprojeto;
 const tarefas = ref({});
 const tarefas_lista = ref({});
 const projeto = ref({});
-const statuses = ['pendente', 'top', 'topado']
+const statuses = ['PENDENTE', 'EM ANDAMENTO', 'CONCLUÍDO'];
 
 function load() {
     ProjetoService.loadTarefas(id_projeto).then(
@@ -53,25 +55,10 @@ function loadProjeto() {
     )
 }
 
-function loadStatus() {
-    tarefas.forEach(tarefa => {
-        if (!statuses.includes(tarefa.status)) {
-            statuses.push(tarefa.status);
-        }
-    })
-
-    tarefas_lista.forEach(tarefa => {
-        if (!statuses.includes(tarefa.status)) {
-            statuses.push(tarefa.status);
-        }
-    })
-}
-
-onMounted(() => { 
-    load(); 
-    loadLista(); 
-    loadProjeto(); 
-    /* loadStatus(); */
+onMounted(() => {
+    load();
+    loadLista();
+    loadProjeto();
 })
 
 </script>

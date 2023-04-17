@@ -126,7 +126,9 @@ function loadAllTasksList() {
 }
 
 function deletar(id) {
-  console.log(taskList.value)
+  TarefaService.delete(id);
+  loadAllTasks();
+  loadAllTasksList();
 }
 
 function update(id) {
