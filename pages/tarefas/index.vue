@@ -56,7 +56,7 @@
         </td>
         <td>
           <v-btn icon>
-            <NuxtLink :to="'tarefas/editar/' + task.id">
+            <NuxtLink :to="'tarefas/editar/lista/' + task.id">
               <v-icon>mdi-square-edit-outline</v-icon>
             </NuxtLink>
           </v-btn>
@@ -82,7 +82,7 @@
                 </p>
               </strong>
             </p>
-            <p v-if="detalhesTarefa.descricao"><strong>Descrição:</strong></p>
+            <p v-if="detalhesTarefa.descricao"><strong>Descrição:</strong>{{ detalhesTarefa.descricao }}</p>
           </v-card-text>
           <v-card-actions>
             <v-btn color="primary" @click="modalDetalhesTarefa = false">

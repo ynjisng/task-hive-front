@@ -29,8 +29,8 @@ function load() {
     ProjetoService.loadTarefas(id_projeto).then(
         response => {
             tarefas.value = response.data;
-            tarefas.value.forEach((tarefa, index) => {
-                tarefa.statuses = statuses[index]
+            tarefas.value.forEach((tarefa) => {
+                tarefa.statuses = statuses[0]
             });
         }
     )

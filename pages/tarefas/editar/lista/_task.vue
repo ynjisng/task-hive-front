@@ -18,10 +18,6 @@
                     </v-col>
 
                     <v-col cols="12" md="4">
-                        <v-text-field label="Descrição" v-model="tarefa.descricao"></v-text-field>
-                    </v-col>
-
-                    <v-col cols="12" md="4">
                         <v-text-field label="Data Prevista" v-model="tarefa.data_prevista"></v-text-field>
                     </v-col>
                 </v-row>
@@ -34,7 +30,7 @@
 
 <script setup>
 
-import TarefaService from '@/service/TarefaService';
+import TarefaListaService from '@/service/TarefaListaService';
 import { ref } from 'vue'
 import { onMounted } from 'vue';
 import { useRoute } from 'vue2-helpers/vue-router';
@@ -45,12 +41,11 @@ console.log(route.params.task)
 
 
 function atualizar() {
-    console.log(tarefa.value);
-    TarefaService.edit(tarefa.value);
+    TarefaListaService.edit(tarefa.value);
 }
 
 function load() {
-    TarefaService.load(route.params.task).then(
+    TarefaListaService.load(route.params.task).then(
         response => {
             tarefa.value = response.data;
         }

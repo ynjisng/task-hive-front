@@ -7,7 +7,7 @@ class TarefaService {
     }
     edit(data) {
         console.log(data);
-        return http.post("/tarefa" + data.id, data);
+        return http.patch("/tarefa/" + data.id, data);
     }
     list() {
         return http.get("/tarefa");
