@@ -1,6 +1,19 @@
-# task-hive-front
+# TaskHive Frontend
 
-## Build Setup
+Essa aplicação foi criada com o objetivo de obtenção da aprovação na disciplina Programação Orientada a Objetos, no curso de Ciência da Computação, na Universidade Federal do Agreste de Pernambuco.
+
+### Autores
+[<img src="https://img.shields.io/badge/Lucas Victor-%2312100E.svg?&style=for-the-badge&logo=github&logoColor=white" />](https://github.com/lucas8790)
+[<img src="https://img.shields.io/badge/Ricardo Martins-%2312100E.svg?&style=for-the-badge&logo=github&logoColor=white" />](https://github.com/RickyM7)
+[<img src="https://img.shields.io/badge/Sara Abreu-%2312100E.svg?&style=for-the-badge&logo=github&logoColor=white" />](https://github.com/ynjisng)
+
+### Descrição
+O TaskHive é uma aplicação de gerenciamento de tarefas que utiliza o paradigma da Programação Orientada a Objetos (POO) para organizar e estruturar o código. O frontend do TaskHive foi desenvolvido em Vue.js com o framework Vuetify.
+
+### Componentes
+O TaskHive utiliza o framework Vuetify para construir os componentes da interface. Consulte a documentação do Vuetify para ver a lista completa de componentes disponíveis.
+
+## Instalação
 
 ```bash
 # install dependencies
